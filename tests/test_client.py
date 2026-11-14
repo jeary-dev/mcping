@@ -87,6 +87,8 @@ def test_ping_offline():
 
 def test_ping_garbage_response():
     async def handler(r, w):
+        await _read_packet(r)
+        await _read_packet(r)
         w.write(b"\xff\xff\xff\xff\xff\xff")
         await w.drain()
         w.close()
