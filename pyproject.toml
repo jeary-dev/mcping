@@ -9,7 +9,7 @@ description = "Check the status of any Minecraft Java server - CLI and async Pyt
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "czrbyn" }]
+authors = [{ name = "jeary-dev" }]
 dependencies = []
 
 [project.optional-dependencies]
