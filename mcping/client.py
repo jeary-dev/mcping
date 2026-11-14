@@ -130,7 +130,7 @@ async def ping(address: str, timeout: float = 5.0) -> ServerStatus:
     except (ConnectionError, OSError) as e:
         status.error = f"Connection failed: {e.strerror or e}"
     except (ProtocolError, ValueError, asyncio.IncompleteReadError) as e:
-        status.error = f"Bad Response: {e}"
+        status.error = f"Bad response: {e}"
     finally:
         if writer is not None:
             writer.close()

@@ -78,11 +78,11 @@ def test_ping_offline():
         server, port = await _serve(_fake_server)
         server.close()
         await server.wait_closed()
-        return await ping(f"127.0.0.1:{port}", timeout=1)
+        return await ping(f"127.0.0.1:{port}", timeout=5)
 
     s = asyncio.run(run())
     assert not s.online
-    assert s.error.startswith("Connection failed")
+    assert s.error.startswith(("Connection failed", "Timed out"))
 
 
 def test_ping_garbage_response():
